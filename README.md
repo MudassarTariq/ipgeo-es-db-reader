@@ -19,12 +19,12 @@ This index will contains data from 'db-place.csv' file.
 curl -X PUT "localhost:9200/place_db"
 ```
 
-- Define the mapping for 'place_db' index.
+- Define the mapping for 'place_db' index. In Elasticsearch, a "mapping" is similar to a schema definition in a traditional database. It defines how documents and their fields are stored and indexed, including their data types, field-specific indexing options, analyzers, and other settings. I you want to see or modify the mappings just update the corresponding .json file [here](/index_mapping/).
 ```
 curl -s -X PUT "localhost:9200/place_db/_mapping" -H 'Content-Type: application/json' --data-binary "@index_mapping/place_db_mapping.json"
 ```
 
-- Use logstash to push data from .csv file to an ES instance.
+- Use logstash to push data from .csv file to an ES instance. You can find the corresponding configuration files [here](/logstash_config/). These files contains necessary configuration to map csv data onto an index.
 ```
 /usr/share/logstash/bin/logstash -f {path_where_repo_clone}/ipgeo-es-db-reader/logstash_config/place_db.conf --path.data /var/lib/logstash/place/
 ```
@@ -44,7 +44,8 @@ curl -X PUT "localhost:9200/country_db"
 curl -X PUT "localhost:9200/country_db/_mapping" -H 'Content-Type: application/json' --data-binary "@index_mapping/country_db_mapping.json"
 ```
 
-- Create an enrich policy.
+- Create an enrich policy. Enrichment policies are used to enrich documents with additional data from external sources before indexing them. This enrichment process enhances the search capabilities by adding relevant information to the documents, which may not be present in the original dataset. We're enhancing the `country_db` index by incorporating data from the `place_db` index.
+If you want, you can have the enrich policies lited [here](/enrich_policies/)
 ```
 curl -X PUT "localhost:9200/_enrich/policy/place-db-enrich-policy" -H 'Content-Type: application/json' --data-binary "@enrich_policies/country_db_enrich_policy.json"
 ```
@@ -54,12 +55,12 @@ curl -X PUT "localhost:9200/_enrich/policy/place-db-enrich-policy" -H 'Content-T
 curl -X POST "localhost:9200/_enrich/policy/place-db-enrich-policy/_execute"
 ```
 
-- Create a pipeline for pushing data.
+- Create an ingest pipeline for pushing data. An ingest pipeline will be helpful during document indexing. It will allows us to pre-process documents before they are indexed, enabling various transformations and enrichments of the data. This pipeline will use the `place-db-enrich-policy` enrich policy for pre-processing.
 ```
 curl -X PUT "localhost:9200/_ingest/pipeline/country-db-enrich-pipeline" -H 'Content-Type: application/json' --data-binary "@pipelines_processors/country_db_pipeline_processor.json"
 ```
 
-- Use logstash to push data from .csv file to an ES instance.
+- Use logstash to push data from .csv file to an ES instance. You can find the corresponding configuration files [here](/logstash_config/). These files contain the necessary configurations to map CSV data onto an Elasticsearch index. Additionally, they include pipelines used to enrich the data.
 ```
 /usr/share/logstash/bin/logstash -f {path_where_repo_clone}/ipgeo-es-db-reader/logstash_config/country_db.conf --path.data /var/lib/logstash/country/
 ```
@@ -93,7 +94,9 @@ curl -X POST "localhost:9200/_enrich/policy/country-db-enrich-policy/_execute"
 curl -X PUT "localhost:9200/_ingest/pipeline/geolocation-db-enrich-pipeline" -H 'Content-Type: application/json' --data-binary "@pipelines_processors/geolocation_db_pipeline_processor.json"
 ```
 
-- Use logstash to push data from .csv file to an ES instance.
+- Use logstash to push data from .csv file to an ES instance. Here you will see few extra options:
+    - `-w` will be used for number of pipeline worker, which could improve processing throughput at the cost of increased resource usage.
+    - `-b` sets the pipeline batch size, allowing each worker to collect and process n number of events before sending them to outputs.
 ```
 /usr/share/logstash/bin/logstash -f {path_where_repo_clone}/ipgeo-es-db-reader/logstash_config/geolocation_db.conf --path.data /var/lib/logstash/geolocation/ -w 8 -b 250
 ```
