@@ -1,0 +1,34 @@
+{
+    "properties": {
+      "id": {
+        "type": "integer"
+      },
+      "place_english": {
+        "type": "text"
+      },
+      "place_german": {
+        "type": "text"
+      },
+      "place_russian": {
+        "type": "text"
+      },
+      "place_japanese": {
+        "type": "text"
+      },
+      "place_french": {
+        "type": "text"
+      },
+      "place_chinese": {
+        "type": "text"
+      },
+      "place_spanish": {
+        "type": "text"
+      },
+      "place_czech": {
+        "type": "text"
+      },
+      "place_italian": {
+        "type": "text"
+      }
+    }
+}

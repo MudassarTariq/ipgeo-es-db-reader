@@ -1,0 +1,199 @@
+{
+    "properties": {
+        "as_number": {
+          "type": "text"
+        },
+        "capital_name_chinese": {
+          "type": "text"
+        },
+        "capital_name_czech": {
+          "type": "text"
+        },
+        "capital_name_english": {
+          "type": "text"
+        },
+        "capital_name_french": {
+          "type": "text"
+        },
+        "capital_name_german": {
+          "type": "text"
+        },
+        "capital_name_italian": {
+          "type": "text"
+        },
+        "capital_name_japanese": {
+          "type": "text"
+        },
+        "capital_name_russian": {
+          "type": "text"
+        },
+        "capital_name_spanish": {
+          "type": "text"
+        },
+        "city_name_chinese": {
+          "type": "text"
+        },
+        "city_name_czech": {
+          "type": "text"
+        },
+        "city_name_english": {
+          "type": "text"
+        },
+        "city_name_french": {
+          "type": "text"
+        },
+        "city_name_german": {
+          "type": "text"
+        },
+        "city_name_italian": {
+          "type": "text"
+        },
+        "city_name_japanese": {
+          "type": "text"
+        },
+        "city_name_russian": {
+          "type": "text"
+        },
+        "city_name_spanish": {
+          "type": "text"
+        },
+        "connection_type": {
+          "type": "text"
+        },
+        "continent_name_chinese": {
+          "type": "text"
+        },
+        "continent_name_czech": {
+          "type": "text"
+        },
+        "continent_name_english": {
+          "type": "text"
+        },
+        "continent_name_french": {
+          "type": "text"
+        },
+        "continent_name_german": {
+          "type": "text"
+        },
+        "continent_name_italian": {
+          "type": "text"
+        },
+        "continent_name_japanese": {
+          "type": "text"
+        },
+        "continent_name_russian": {
+          "type": "text"
+        },
+        "continent_name_spanish": {
+          "type": "text"
+        },
+        "country_calling_code": {
+          "type": "text"
+        },
+        "country_code2": {
+          "type": "text" 
+        },
+        "country_code3": {
+          "type": "text"
+        },
+        "country_continent_code": {
+          "type": "text"
+        },
+        "country_currency_code": {
+          "type": "text"
+        },
+        "country_currency_name": {
+          "type": "text"
+        },
+        "country_currency_symbol": {
+          "type": "text"
+        },
+        "country_languages": {
+          "type": "text"
+        },
+        "country_name_chinese": {
+          "type": "text"
+        },
+        "country_name_czech": {
+          "type": "text"
+        },
+        "country_name_english": {
+          "type": "text"
+        },
+        "country_name_french": {
+          "type": "text"
+        },
+        "country_name_german": {
+          "type": "text"
+        },
+        "country_name_italian": {
+          "type": "text"
+        },
+        "country_name_japanese": {
+          "type": "text"
+        },
+        "country_name_russian": {
+          "type": "text"
+        },
+        "country_name_spanish": {
+          "type": "text"
+        },
+        "country_tld": {
+          "type": "text"
+        },
+        "end_ip": {
+          "type": "ip"
+        },
+        "geoname_id": {
+          "type": "text"
+        },
+        "isp": {
+          "type": "text"
+        },
+        "latitude": {
+          "type": "float"
+        },
+        "longitude": {
+          "type": "float"
+        },
+        "organization": {
+          "type": "text"
+        },
+        "start_ip": {
+          "type": "ip"
+        },
+        "state_prov_name_chinese": {
+          "type": "text"
+        },
+        "state_prov_name_czech": {
+          "type": "text"
+        },
+        "state_prov_name_english": {
+          "type": "text"
+        },
+        "state_prov_name_french": {
+          "type": "text"
+        },
+        "state_prov_name_german": {
+          "type": "text"
+        },
+        "state_prov_name_italian": {
+          "type": "text"
+        },
+        "state_prov_name_japanese": {
+          "type": "text"
+        },
+        "state_prov_name_russian": {
+          "type": "text"
+        },
+        "state_prov_name_spanish": {
+          "type": "text"
+        },
+        "time_zone": {
+          "type": "text"
+        },
+        "zip_code": {
+          "type": "text"
+        }
+      }
+  }

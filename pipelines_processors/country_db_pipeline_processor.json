@@ -1,0 +1,257 @@
+{
+    "processors": [
+      {
+        "enrich": {
+          "policy_name": "place-db-enrich-policy",
+          "field": "continent_name_place_id",
+          "target_field": "enriched_continent",
+          "max_matches": "1",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_continent.place_chinese",
+          "target_field": "continent_name_chinese",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_continent.place_czech",
+          "target_field": "continent_name_czech",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_continent.place_english",
+          "target_field": "continent_name_english",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_continent.place_french",
+          "target_field": "continent_name_french",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_continent.place_german",
+          "target_field": "continent_name_german",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_continent.place_italian",
+          "target_field": "continent_name_italian",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_continent.place_japanese",
+          "target_field": "continent_name_japanese",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_continent.place_russian",
+          "target_field": "continent_name_russian",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_continent.place_spanish",
+          "target_field": "continent_name_spanish",
+          "ignore_missing": true
+        }
+      },
+      {
+        "enrich": {
+          "policy_name": "place-db-enrich-policy",
+          "field": "country_name_place_id",
+          "target_field": "enriched_country",
+          "max_matches": "1",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.place_chinese",
+          "target_field": "country_name_chinese",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.place_czech",
+          "target_field": "country_name_czech",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.place_english",
+          "target_field": "country_name_english",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.place_french",
+          "target_field": "country_name_french",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.place_german",
+          "target_field": "country_name_german",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_country.place_italian",
+          "target_field": "country_name_italian",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_country.place_japanese",
+          "target_field": "country_name_japanese",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_country.place_russian",
+          "target_field": "country_name_russian",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_country.place_spanish",
+          "target_field": "country_name_spanish",
+          "ignore_missing": true
+        }
+      },
+      {
+        "enrich": {
+          "policy_name": "place-db-enrich-policy",
+          "field": "country_capital_place_id",
+          "target_field": "enriched_capital",
+          "max_matches": "1",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_capital.place_chinese",
+          "target_field": "capital_name_chinese",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_capital.place_czech",
+          "target_field": "capital_name_czech",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_capital.place_english",
+          "target_field": "capital_name_english",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_capital.place_french",
+          "target_field": "capital_name_french",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_capital.place_german",
+          "target_field": "capital_name_german",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_capital.place_italian",
+          "target_field": "capital_name_italian",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_capital.place_japanese",
+          "target_field": "capital_name_japanese",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_capital.place_russian",
+          "target_field": "capital_name_russian",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_capital.place_spanish",
+          "target_field": "capital_name_spanish",
+          "ignore_missing": true
+        }
+      },
+      {
+        "remove": {
+          "field": "enriched_country",
+          "ignore_missing": true
+        }
+      },
+      {
+        "remove": {
+          "field": "enriched_capital",
+          "ignore_missing": true
+        }
+      },
+      {
+        "remove": {
+          "field": "enriched_continent",
+          "ignore_missing": true
+        }
+      },
+      {
+        "remove": {
+          "field": "country_capital_place_id",
+          "ignore_missing": true
+        }
+      },
+      {
+        "remove": {
+          "field": "continent_name_place_id",
+          "ignore_missing": true
+        }
+      },
+      {
+        "remove": {
+          "field": "country_name_place_id",
+          "ignore_missing": true
+        }
+      }
+    ]
+  }
+  

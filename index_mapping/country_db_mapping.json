@@ -1,0 +1,43 @@
+{
+    "properties": {
+      "id": {
+        "type": "integer"
+      },
+      "continent_code": {
+        "type": "text"
+      },
+      "continent_name_place_id": {
+        "type": "integer"
+      },
+      "country_code2": {
+        "type": "text"
+      },
+      "country_code3": {
+        "type": "text"
+      },
+      "country_name_place_id": {
+        "type": "integer"
+      },
+      "country_capital_place_id": {
+        "type": "integer"
+      },
+      "currency_code": {
+        "type": "text"
+      },
+      "currency_name": {
+        "type": "text"
+      },
+      "currency_symbol": {
+        "type": "keyword"
+      },
+      "calling_code": {
+        "type": "text"
+      },
+      "tld": {
+        "type": "text"
+      },
+      "languages": {
+        "type": "text"
+      }
+    }
+}

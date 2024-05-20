@@ -1,0 +1,523 @@
+{
+    "processors": [
+      {
+        "enrich": {
+          "policy_name": "place-db-enrich-policy",
+          "field": "state_prov_place_id",
+          "target_field": "enriched_state_prov",
+          "max_matches": "1",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_state_prov.place_chinese",
+          "target_field": "state_prov_name_chinese",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_state_prov.place_czech",
+          "target_field": "state_prov_name_czech",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_state_prov.place_english",
+          "target_field": "state_prov_name_english",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_state_prov.place_french",
+          "target_field": "state_prov_name_french",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_state_prov.place_german",
+          "target_field": "state_prov_name_german",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_state_prov.place_italian",
+          "target_field": "state_prov_name_italian",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_state_prov.place_japanese",
+          "target_field": "state_prov_name_japanese",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_state_prov.place_russian",
+          "target_field": "state_prov_name_russian",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_state_prov.place_spanish",
+          "target_field": "state_prov_name_spanish",
+          "ignore_missing": true
+        }
+      },
+      {
+        "enrich": {
+          "policy_name": "place-db-enrich-policy",
+          "field": "district_place_id",
+          "target_field": "enriched_district",
+          "max_matches": "1",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_district.place_chinese",
+          "target_field": "district_name_chinese",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_district.place_czech",
+          "target_field": "district_name_czech",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_district.place_english",
+          "target_field": "district_name_english",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_district.place_french",
+          "target_field": "district_name_french",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_district.place_german",
+          "target_field": "district_name_german",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_district.place_italian",
+          "target_field": "district_name_italian",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_district.place_japanese",
+          "target_field": "district_name_japanese",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_district.place_russian",
+          "target_field": "district_name_russian",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_district.place_spanish",
+          "target_field": "district_name_spanish",
+          "ignore_missing": true
+        }
+      },
+      {
+        "enrich": {
+          "policy_name": "place-db-enrich-policy",
+          "field": "city_place_id",
+          "target_field": "enriched_city",
+          "max_matches": "1",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_city.place_chinese",
+          "target_field": "city_name_chinese",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_city.place_czech",
+          "target_field": "city_name_czech",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_city.place_english",
+          "target_field": "city_name_english",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_city.place_french",
+          "target_field": "city_name_french",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_city.place_german",
+          "target_field": "city_name_german",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_city.place_italian",
+          "target_field": "city_name_italian",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_city.place_japanese",
+          "target_field": "city_name_japanese",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_city.place_russian",
+          "target_field": "city_name_russian",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_city.place_spanish",
+          "target_field": "city_name_spanish",
+          "ignore_missing": true
+        }
+      },
+      {
+        "enrich": {
+          "policy_name": "country-db-enrich-policy",
+          "field": "country_id",
+          "target_field": "enriched_country",
+          "max_matches": "1",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.continent_code",
+          "target_field": "country_continent_code",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.continent_name_chinese",
+          "target_field": "continent_name_chinese",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_country.continent_name_czech",
+          "target_field": "continent_name_czech",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.continent_name_english",
+          "target_field": "continent_name_english",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.continent_name_french",
+          "target_field": "continent_name_french",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.continent_name_german",
+          "target_field": "continent_name_german",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.continent_name_italian",
+          "target_field": "continent_name_italian",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.continent_name_japanese",
+          "target_field": "continent_name_japanese",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.continent_name_russian",
+          "target_field": "continent_name_russian",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.continent_name_spanish",
+          "target_field": "continent_name_spanish",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.country_code2",
+          "target_field": "country_code2",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.country_code3",
+          "target_field": "country_code3",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.country_name_chinese",
+          "target_field": "country_name_chinese",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_country.country_name_czech",
+          "target_field": "country_name_czech",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.country_name_english",
+          "target_field": "country_name_english",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.country_name_french",
+          "target_field": "country_name_french",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.country_name_german",
+          "target_field": "country_name_german",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.country_name_italian",
+          "target_field": "country_name_italian",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.country_name_japanese",
+          "target_field": "country_name_japanese",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.country_name_russian",
+          "target_field": "country_name_russian",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.country_name_spanish",
+          "target_field": "country_name_spanish",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.capital_name_chinese",
+          "target_field": "capital_name_chinese",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_country.capital_name_czech",
+          "target_field": "capital_name_czech",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.capital_name_english",
+          "target_field": "capital_name_english",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.capital_name_french",
+          "target_field": "capital_name_french",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.capital_name_german",
+          "target_field": "capital_name_german",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.capital_name_italian",
+          "target_field": "capital_name_italian",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.capital_name_japanese",
+          "target_field": "capital_name_japanese",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.capital_name_russian",
+          "target_field": "capital_name_russian",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.capital_name_spanish",
+          "target_field": "capital_name_spanish",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_country.currency_code",
+          "target_field": "country_currency_code",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_country.currency_name",
+          "target_field": "country_currency_name",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_country.currency_symbol",
+          "target_field": "country_currency_symbol",
+          "ignore_missing": true
+        }
+      },
+          {
+        "rename": {
+          "field": "enriched_country.calling_code",
+          "target_field": "country_calling_code",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.tld",
+          "target_field": "country_tld",
+          "ignore_missing": true
+        }
+      },
+      {
+        "rename": {
+          "field": "enriched_country.languages",
+          "target_field": "country_languages",
+          "ignore_missing": true
+        }
+      },
+      {
+        "remove": {
+          "field": "enriched_country",
+          "ignore_missing": true
+        }
+      },
+      {
+        "remove": {
+          "field": "enriched_city",
+          "ignore_missing": true
+        }
+      },
+      {
+        "remove": {
+          "field": "enriched_state_prov",
+          "ignore_missing": true
+        }
+      },
+      {
+        "remove": {
+          "field": "enriched_district",
+          "ignore_missing": true
+        }
+      },
+      {
+        "remove": {
+          "field": "state_prov_place_id",
+          "ignore_missing": true
+        }
+      },
+      {
+        "remove": {
+          "field": "city_place_id",
+          "ignore_missing": true
+        }
+      },
+      {
+        "remove": {
+          "field": "country_id",
+          "ignore_missing": true
+        }
+      }
+    ]
+  }

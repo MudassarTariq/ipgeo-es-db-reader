@@ -1,0 +1,7 @@
+{
+    "match": {
+      "indices": "country_db",
+      "match_field": "id",
+      "enrich_fields": ["id", "continent_code", "continent_name_chinese","continent_name_czech", "continent_name_english", "continent_name_french", "continent_name_german", "continent_name_italian", "continent_name_japanese", "continent_name_russian", "continent_name_spanish", "country_code2", "country_code3", "country_name_chinese", "country_name_czech", "country_name_english", "country_name_french" ,"country_name_german", "country_name_italian", "country_name_japanese", "country_name_russian", "country_name_spanish", "capital_name_chinese", "capital_name_czech", "capital_name_english", "capital_name_french", "capital_name_german", "capital_name_italian", "capital_name_japanese", "capital_name_russian", "capital_name_spanish", "currency_code", "currency_name", "currency_symbol", "calling_code", "tld", "languages"]
+    }
+  }

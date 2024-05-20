@@ -1,0 +1,7 @@
+{
+    "match": {
+      "indices": "place_db",
+      "match_field": "id",
+      "enrich_fields": ["place_english","place_german","place_russian","place_japanese","place_french","place_chinese","place_spanish","place_czech","place_italian"]
+    }
+  }
