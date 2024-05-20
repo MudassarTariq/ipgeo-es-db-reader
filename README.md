@@ -26,7 +26,7 @@ curl -s -X PUT "localhost:9200/place_db/_mapping" -H 'Content-Type: application/
 
 - Use logstash to push data from .csv file to an ES instance.
 ```
-/usr/share/logstash/bin/logstash -f place_db.conf
+/usr/share/logstash/bin/logstash -f {path_where_repo_clone}/logstash_config/place_db.conf --path.data /var/log/logstash/place/
 ```
 
 #### Setting Up country_db index
@@ -59,7 +59,7 @@ curl -X PUT "localhost:9200/_ingest/pipeline/country-db-enrich-pipeline" -H 'Con
 
 - Use logstash to push data from .csv file to an ES instance.
 ```
-/usr/share/logstash/bin/logstash -f country_db.conf
+/usr/share/logstash/bin/logstash -f {path_where_repo_clone}/logstash_config/country_db.conf --path.data /var/log/logstash/country/
 ```
 
 
@@ -93,5 +93,5 @@ curl -X PUT "localhost:9200/_ingest/pipeline/geolocation-db-enrich-pipeline" -H 
 
 - Use logstash to push data from .csv file to an ES instance.
 ```
-/usr/share/logstash/bin/logstash -f geolocation_db.conf
+/usr/share/logstash/bin/logstash -f {path_where_repo_clone}/logstash_config/geolocation_db.conf --path.data /var/log/logstash/geolocation/ -w 8 -b 250
 ```
