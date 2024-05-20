@@ -26,8 +26,10 @@ curl -s -X PUT "localhost:9200/place_db/_mapping" -H 'Content-Type: application/
 
 - Use logstash to push data from .csv file to an ES instance.
 ```
-/usr/share/logstash/bin/logstash -f {path_where_repo_clone}/ipgeo-es-db-reader/logstash_config/place_db.conf --path.data /var/log/logstash/place/
+/usr/share/logstash/bin/logstash -f {path_where_repo_clone}/ipgeo-es-db-reader/logstash_config/place_db.conf --path.data /var/lib/logstash/place/
 ```
+
+Just make sure that data dir `/var/lib/logstash/place/` used above must have writeable permissions.
 
 #### Setting Up country_db index
 This index will contains data.
@@ -54,14 +56,14 @@ curl -X POST "localhost:9200/_enrich/policy/place-db-enrich-policy/_execute"
 
 - Create a pipeline for pushing data.
 ```
-curl -X PUT "localhost:9200/_ingest/pipeline/country-db-enrich-pipeline" -H 'Content-Type: application/json' --data-binary "@pipelines/country_db-pipeline.json"
+curl -X PUT "localhost:9200/_ingest/pipeline/country-db-enrich-pipeline" -H 'Content-Type: application/json' --data-binary "@pipelines_processors/country_db_pipeline_processor.json"
 ```
 
 - Use logstash to push data from .csv file to an ES instance.
 ```
-/usr/share/logstash/bin/logstash -f {path_where_repo_clone}/ipgeo-es-db-reader/logstash_config/country_db.conf --path.data /var/log/logstash/country/
+/usr/share/logstash/bin/logstash -f {path_where_repo_clone}/ipgeo-es-db-reader/logstash_config/country_db.conf --path.data /var/lib/logstash/country/
 ```
-
+Just make sure that data dir `/var/lib/logstash/country/` used above must have writeable permissions.
 
 #### Setting up geolocation_db index
 This will be our main index that will store information about the geolocation of an ip.
@@ -88,10 +90,11 @@ curl -X POST "localhost:9200/_enrich/policy/country-db-enrich-policy/_execute"
 
 - Create a pipeline for pushing data.
 ```
-curl -X PUT "localhost:9200/_ingest/pipeline/geolocation-db-enrich-pipeline" -H 'Content-Type: application/json' --data-binary "@pipelines/geolocation_db_pipeline_processor.json"
+curl -X PUT "localhost:9200/_ingest/pipeline/geolocation-db-enrich-pipeline" -H 'Content-Type: application/json' --data-binary "@pipelines_processors/geolocation_db_pipeline_processor.json"
 ```
 
 - Use logstash to push data from .csv file to an ES instance.
 ```
-/usr/share/logstash/bin/logstash -f {path_where_repo_clone}/ipgeo-es-db-reader/logstash_config/geolocation_db.conf --path.data /var/log/logstash/geolocation/ -w 8 -b 250
+/usr/share/logstash/bin/logstash -f {path_where_repo_clone}/ipgeo-es-db-reader/logstash_config/geolocation_db.conf --path.data /var/lib/logstash/geolocation/ -w 8 -b 250
 ```
+Just make sure that data dir `/var/lib/logstash/geolocation/` used above must have writeable permissions.
