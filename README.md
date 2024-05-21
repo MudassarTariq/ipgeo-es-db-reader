@@ -41,7 +41,7 @@ Before running below command make sure to add your place file(downloaded from ip
 
 Just make sure that data dir `/var/lib/logstash/place/` have writeable permissions.
 
-#### Setting Up country_db index
+### Setting Up country_db index
 This index will contains data.
 
 - Create an index called 'country_db'.
@@ -80,7 +80,7 @@ Before running below command make sure to add your country file(downloaded from 
 ```
 Just make sure that data dir `/var/lib/logstash/country/` have writeable permissions.
 
-#### Setting up geolocation_db index
+### Setting up geolocation_db index
 This will be our main index that will store information about the geolocation of an ip.
 
 - create an index called 'geolocation_db'
@@ -109,17 +109,17 @@ curl -X PUT "localhost:9200/_ingest/pipeline/geolocation-db-enrich-pipeline" -H 
 ```
 
 - Use logstash to push data from .csv file to an ES instance. Here you will see few extra options:
-    - `-w` will be used for number of pipeline worker, which could improve processing throughput at the cost of increased resource usage.
+    - `-w` will be used for number of pipeline worker, which could improve processing throughput at the cost of increased resource usage.The optimal value corresponds to the number of processors in your machine.
     - `-b` sets the pipeline batch size, allowing each worker to collect and process n number of events before sending them to outputs.
 
-Before running below command make sure to add your geolocation file(downloaded from ipgeolocation.io) path inside [geolocaiton_db.conf](/logstash_config/geolocation_db.conf).
+Before running below command make sure to add your geolocation file(downloaded from ipgeolocation.io) path inside [geolocaiton_db_{DB-Version}.conf](/logstash_config/geolocation_db_I.conf).
 ```
-/usr/share/logstash/bin/logstash -f {path_where_repo_clone}/ipgeo-es-db-reader/logstash_config/geolocation_db.conf --path.data /var/lib/logstash/geolocation/ -w 8 -b 250
+/usr/share/logstash/bin/logstash -f {path_where_repo_clone}/ipgeo-es-db-reader/logstash_config/geolocation_db_{DB-Version}.conf --path.data /var/lib/logstash/geolocation/ -w {choose as per your resources} -b 150
 ```
 Just make sure that data dir `/var/lib/logstash/geolocation/` have writeable permissions.
 
 
-#### Setting up proxy_db index
+### Setting up proxy_db index
 This index will contains data from 'db-security.csv' file.
 - Create an index called 'proxy_db'.
 ```
