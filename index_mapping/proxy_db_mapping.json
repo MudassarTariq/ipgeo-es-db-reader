@@ -1,0 +1,31 @@
+{
+    "properties": {
+      "ip": {
+        "type": "ip"
+      },
+      "threat_score": {
+        "type": "float"
+      },
+      "is_tor": {
+        "type": "boolean"
+      },
+      "is_proxy": {
+        "type": "boolean"
+      },
+      "proxy_type": {
+        "type": "text"
+      },
+      "is_anonymous": {
+        "type": "boolean"
+      },
+      "is_known_attacker": {
+        "type": "boolean"
+      },
+      "is_bot": {
+        "type": "boolean"
+      },
+      "is_spam": {
+        "type": "boolean"
+      }
+    }
+}

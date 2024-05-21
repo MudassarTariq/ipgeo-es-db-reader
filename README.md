@@ -16,6 +16,12 @@ Use Roman numerals for the DB_VERSION. However, by this way our variable will no
 Once the prerequisites are met now you can proceed with indexing the data into an ES instance.
 
 ## Setting Up ES Instance.
+- if you have subscribed DB-I to DB-VII then you should follow following steps.
+    - [Setup place_db index](#setting-up-place_db-index)
+    - [Setup country_db index](#setting-up-country_db-index)
+    - [Setup geolocation_db index](#setting-up-geolocation_db-index)
+- If you have subscribed DB-V to DB-VII as they includes security DB too then you should index it too by following:
+    - [Setup proxy_db index](#)
 
 #### Setting Up place_db index
 This index will contains data from 'db-place.csv' file.
@@ -116,3 +122,28 @@ Before running below command make sure to add your geolocation file(downloaded f
 /usr/share/logstash/bin/logstash -f {path_where_repo_clone}/ipgeo-es-db-reader/logstash_config/geolocation_db.conf --path.data /var/lib/logstash/geolocation/ -w 8 -b 250
 ```
 Just make sure that data dir `/var/lib/logstash/geolocation/` have writeable permissions.
+
+
+#### Setting up proxy_db index
+This index will contains data from 'db-security.csv' file.
+- Create an index called 'proxy_db'.
+```
+curl -X PUT "localhost:9200/proxy_db"
+```
+
+- Define the mapping for 'proxy_db' index. I you want to see or modify the mappings just update the corresponding .json file [here](/index_mapping/).
+```
+curl -s -X PUT "localhost:9200/proxy_db/_mapping" -H 'Content-Type: application/json' --data-binary "@index_mapping/proxy_db_mapping.json"
+```
+
+- Use logstash to push data from .csv file to an ES instance. You can find the corresponding configuration files [here](/logstash_config/). These files contains necessary configuration to map csv data onto an index.
+
+Before running below command make sure to add your proxy file(downloaded from ipgeolocation.io) path inside [geolocaiton_db.conf](/logstash_config/place_db.conf).
+
+
+```
+/usr/share/logstash/bin/logstash -f {path_where_repo_clone}/ipgeo-es-db-reader/logstash_config/proxy_db.conf --path.data /var/lib/logstash/proxy/
+```
+
+Just make sure that data dir `/var/lib/logstash/proxy/` have writeable permissions.
+
