@@ -7,11 +7,6 @@ Before you begin, please ensure you have the following prerequisites in place:
 1) IP Geolocation Database Files: Download the necessary IP geolocation database files.
 2) Elasticsearch: Install and ensure Elasticsearch is up and running. Refer to the [Elasticsearch installation guide](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html) if you need assistance.
 3) Logstash: Install and ensure Logstash is up and running. Refer to the [Logstash installation guide](https://www.elastic.co/guide/en/logstash/current/installing-logstash.html) if you need assistance.
-4) Set the database version between I and VII in the environment variable:
-```
-export DB_VERSION="I"
-```
-Use Roman numerals for the DB_VERSION. However, by this way our variable will not be persistent across reboots or sessions, to make it persistent across reboots make sure to add above line into your `.bash_profile` or `.profile`. 
 
 Once the prerequisites are met now you can proceed with indexing the data into an ES instance.
 
