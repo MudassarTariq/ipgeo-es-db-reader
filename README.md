@@ -142,3 +142,43 @@ curl -s -X PUT "localhost:9200/proxy_db/_mapping" -H 'Content-Type: application/
 /usr/share/logstash/bin/logstash -f {path_where_repo_clone}/ipgeo-es-db-reader/logstash_config/proxy_db.conf --path.data /var/lib/logstash/proxy/
 ```
 
+## Usage Examples
+
+If you need to determine the geolocation of an IP address, simply execute the following command on the machine where your Elasticsearch indices are configured:
+```
+curl -X GET "localhost:9200/geolocation_db/_search?pretty" -H "Content-Type: application/json" -d '                                  
+{               
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "range": {
+            "start_ip": {
+              "lte": "1.1.1.1"
+            }
+          }
+        },
+        {
+          "range": {
+            "end_ip": {
+              "gte": "1.1.1.1"
+            }
+          }
+        }
+      ]
+    }
+  }
+}'
+```
+
+If you want to assess the security of an IP address:
+```
+GET /proxy_db/_search?pretty
+{                             
+  "query": {
+    "match": {
+      "ip": "104.215.214.120"
+    }
+  }
+}
+```
